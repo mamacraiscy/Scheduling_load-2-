@@ -1,0 +1,284 @@
+body{
+    padding: 0px;
+    margin: 0px;
+  background-color: #045154;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.logo{
+    border-radius: 100%;
+    position: fixed;
+    width: 90PX;
+    height: 90PX;
+    left: 45px;
+    top: 25px;
+    box-shadow: 0px 0px 20px black,0px 0px 30px black;
+    z-index: 1000;
+}
+
+.logo-label{
+    color: #E87A00;
+    position: fixed;
+    top: 125px;
+    left: 25px;
+    font-size: 15px;
+    text-shadow: 0px 0px 30px black, 0px 0px 50px black;
+    z-index: 1000;
+}
+
+.logo-bg{
+    position: fixed;
+   background: linear-gradient(to bottom,#045154,transparent);
+    width: 45%;
+    height: 25%;
+    z-index:1000;
+}
+
+nav{
+    position: fixed;
+    right: 40px;
+    top: 25px;
+word-spacing: 70px;
+text-shadow: 0px 0px 5px black;
+padding-right: 150px;
+padding-left: 50px;
+border-radius: 10px;
+
+}
+
+nav ul li{
+    display: inline;
+  position: relative;
+  right: 30px;
+}
+
+nav ul{
+    padding: 10px;
+      list-style-type: none;
+      padding-left: 50px;
+  }
+
+
+  nav ul li a{
+    text-decoration: none;
+    color: #D89C60;
+    font-weight: bolder;
+    transition: 0.3s;
+}
+
+nav ul li a:hover{
+    color: #E87A00;
+    text-shadow: 0px 0px 2px #E87A00;
+}
+
+
+nav ul li a.active {
+    color: #E87A00;
+    text-shadow: 0px 0px 10px #E87A00;
+ 
+  }
+
+
+.btn-login{
+    position: fixed;
+    top: 30px;
+    right: 70px;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 10px;
+    background-color: #045154;
+    transition: 0.3s;
+    padding: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #E87A00;
+    border: 1px solid #E87A00;
+   
+}
+
+
+.btn-login:hover{
+    box-shadow: 0px 0px 30px #E87A00 inset;
+    
+}
+
+
+
+
+
+  section{
+   
+    text-align: center;
+    padding-top: 80px;
+    padding-bottom: 60%;
+
+  }
+  
+
+  .bg-image{
+    position: fixed;
+    top: 120px;
+    right: -500px;
+    height: 70%;
+    width: 80%;
+    z-index: -1;
+    border-radius: 100px 0px 0px 100px;
+    box-shadow: 0px 0px 30px black;
+}
+
+
+
+.content1{
+    color: white;
+    position: absolute;
+    top: 150px;
+    left: 70px;
+    font-size: 60px;
+    font-weight: bolder;
+    text-shadow: 2px 3px 15px black;
+ 
+}
+
+
+.p1{
+    position: relative;
+    bottom: 50px;
+   
+}
+ .p2{
+    font-size: 20px;
+  position: absolute;
+  top: 380px;
+  left: 79px;
+    font-weight: normal;
+    color: #D89C60;
+ }
+
+ .p3{
+    font-size: 20px;
+  position: absolute;
+  top: 410px;
+  left: 79px;
+    font-weight: normal;
+    color: #D89C60;
+ }
+
+ .p4{
+    font-size: 20px;
+  position: absolute;
+  top: 440px;
+  left: 79px;
+    font-weight: normal;
+    color: #D89C60;
+ }
+
+
+ .btn {
+    position: absolute;
+    top: 600px;
+    left: 100px;
+    /* word-spacing: 10px; */
+}
+
+/* Shared button styles */
+a.but, button.but {
+    display: inline-block; /* Ensures links behave like buttons */
+    padding: 20px;
+    font-size: 20px;
+    font-weight: bolder;
+    border-radius: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+    transition: 0.3s;
+    text-decoration: none; /* Removes underline for links */
+    text-align: center; /* Aligns text properly */
+}
+
+/* Specific styles for btn1 */
+a.btn1, button.btn1 {
+    background-color: #E87A00;
+    color: white;
+    border: 2px solid #E87A00;
+    margin-right: 10px;
+}
+
+a.btn1:hover, button.btn1:hover {
+    background-color: white;
+    color: #E87A00;
+    border: 2px solid white;
+    transform: scale(1.1);
+}
+
+/* Optional: Styling hover state for accessibility */
+a.but:focus, button.but:focus {
+    outline: none;
+    box-shadow: 0 0 5px #E87A00;
+}
+
+
+.btn2{
+    background-color: black;
+    border: 2px solid black;
+    color: white;
+    margin-left: 10px;
+}
+.btn2:hover{
+    background-color: white;
+    color: black;
+    border: 2px solid white;
+    transform: scale(1.1);
+}
+
+
+
+
+
+.section2,.section3,.section4{
+    color: white;
+    font-weight: bolder;
+
+}
+
+
+.contents-blank{
+    color: white;
+    position: absolute;
+
+    left: 200px;
+    font-size: 30px;
+    font-weight: bolder;
+    text-shadow: 2px 3px 15px black;
+}
+
+
+footer{
+    text-align: center;
+    color: white;
+   background: linear-gradient(to bottom,transparent,#E87A00);
+    height: 150px;
+  
+}
+
+.timer{
+    
+    position: fixed;
+    top: 300px;
+    z-index: 1000;
+    right: 250px;
+    background-color: transparent;
+    padding: 40px;
+    backdrop-filter: blur(5px); /* Apply blur to the background */
+    border-radius: 10px;
+}
+
+#time-text {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color:  orange;
+  }
+  
+  #date-time {
+    font-size: 50px;
+    font-weight: bold;
+    color:  orange;
+  }

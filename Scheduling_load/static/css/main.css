@@ -1,0 +1,512 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f4f4f4;
+}
+
+header {
+  background-color: #333;
+  color: white;
+  padding: 10px 0;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2em;
+}
+
+nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+}
+
+.d-flex {
+  width: 95%;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+
+
+.search-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+  padding-left: 5px;
+}
+
+#course-search-input {
+  padding: 10px;
+  font-size: 16px;
+  width: 50%;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  outline: none;
+  display: inline;
+}
+
+
+
+
+#filter-dropdown {
+  padding: 10px;
+  font-size: 16px;
+  width: 20%;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  outline: auto;
+ 
+}
+
+button[type="submit"] {
+  padding: 10px 15px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+
+/* Suggestions Box Styles */
+#suggestions {
+  max-height: 200px;
+  overflow-y: auto;
+  border-radius: 10px;
+  display: block;
+  width: 70%; /* Ensure suggestions take full width of the container */
+  margin-left: 30%;
+  background-color: white;
+  z-index: 999;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 100%; /* Place suggestions right below the input */
+}
+
+/* Suggestions Box */
+#course-suggestions {
+  max-height: 200px;
+  overflow-y: auto;
+  border-radius: 10px;
+  display: block;
+  width: 70%; /* Ensure suggestions take full width of the container */
+  margin-left: 20%;
+  background-color: white;
+  z-index: 999;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 100%; /* Place suggestions right below the input */
+  cursor: pointer;
+}
+
+#room-suggestions {
+  max-height: 200px;
+  overflow-y: auto;
+  border-radius: 10px;
+  display: block;
+  width: 70%; /* Ensure suggestions take full width of the container */
+  margin-left: 20%;
+  background-color: white;
+  z-index: 999;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 100%; /* Place suggestions right below the input */
+  cursor: pointer;
+}
+
+#program-suggestions {
+  max-height: 200px;
+  overflow-y: auto;
+  border-radius: 10px;
+  display: block;
+  width: 70%; /* Ensure suggestions take full width of the container */
+  margin-left: 20%;
+  background-color: white;
+  z-index: 999;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 100%; /* Place suggestions right below the input */
+  cursor: pointer;
+ }
+
+
+
+
+#search-input{
+  padding: 10px;
+  font-size: 16px;
+  width: 50%;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  outline: none;
+}
+
+#master-degree,#bachelor-degree {
+  padding: 10px;
+  font-size: 16px;
+  width: 50%;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.suggestions-box .suggestion-item {
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.suggestion-item2, .suggestion-item3 ,.suggestion-item4,.suggestion-item5 {
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  overflow: auto;
+}
+
+
+.suggestion-item:hover ,.suggestion-item2:hover , .suggestion-item3:hover,.suggestion-item4:hover,.suggestion-item5:hover{
+  background-color: #90c08c;
+}
+
+
+
+/* Show suggestions when data is available */
+.suggestions-visible {
+  display: none;
+}
+
+.suggestion-item:last-child, .suggestion-item2:last-child, .suggestion-item3:last-child,.suggestion-item4:last-child ,.suggestion-item5:last-child {
+  border-bottom: none; /* Remove the border from the last item */
+}
+
+
+
+.search-inputs {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+/* Style the course search input field */
+#course-search-input {
+  width: 70%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+
+/* No suggestions found message */
+#course-suggestions .no-results {
+  padding: 10px;
+  font-size: 16px;
+  color: #888;
+  text-align: center;
+}
+
+#course-search-input:focus {
+  outline: none;
+  border-color: #007bff; /* Change border color when input is focused */
+}
+
+
+/* Input Group Styling */
+.input-group {
+  position: relative;
+  width: 100%;
+}
+
+/* Additional Styling for Inputs */
+input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#main-container{
+  display: flex;
+  justify-content: center; /* Align items to the left */
+  align-items: flex-start; /* Ensure sections align at the top */
+  gap: 20px; /* Add spacing between the two sections */
+  margin: 30px; /* Add space around the container */
+}
+
+#instructor-search {
+  position: relative;
+  flex: 1; /* Ensure both sections take equal space */
+  width: 450px;
+  max-width: 600px; /* Optional: Adjust as needed */
+  background-color: white;
+  padding: 2%;
+  border-radius: 25px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-right: 30px;
+}
+
+#details-container-main {
+  padding: 1.5%;
+  width: 800px;
+  height: 750px;
+  border-radius: 25px;
+  border: 1px solid #ddd;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-left: 50px;
+}
+
+#details-container,#details-container2,
+#details-container3,#details-container4,
+#details-container5,#details-container6,
+#details-container7,#details-container9,
+#details-container10{
+  background-color: rgb(255, 255, 255);
+}
+#credit-hours, #semester, #search-rooms, #input-yearlvl, #input-section, #search-prog,#input-shift{
+  margin-top: 10px;
+  margin-left: 8px;
+  width: 60%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+#selected-room-name {
+  margin-top: 10px;
+  margin-left: 8px;
+  width: 80%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+
+}
+
+select {
+  max-width: 50%;
+  margin-top: 10px;
+}
+
+
+/* Instructor Details Section */
+#instructor-details {
+  display: block;
+  margin-top: 30px;
+  max-width: 300px;
+  background-color: white;
+  padding: 1%;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  outline: auto;
+}
+
+#details-container div {
+  margin-bottom: 10px;
+  
+}
+
+
+
+footer {
+  text-align: center;
+  margin-top: 50px;
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  position: inherit;
+}
+
+footer p {
+  margin: 0;
+  font-size: 1em;
+}
+
+/* Responsiveness */
+@media (max-width: 600px) {
+  .search-container {
+      flex-direction: column;
+      width: 100%;
+  }
+
+  #instructor-search {
+      margin: px;
+  }
+
+  #instructor-details {
+      margin-top: 20px;
+  }
+  #room-search, #room-scheduling, #room-details, #program-search {
+    margin: 10px;
+  }
+
+  #room-select, #day-select, #time-select {
+      width: 100%;
+  }
+
+  #room-scheduling {
+      margin-top: 20px;
+  }
+}
+
+
+/* Room Details Section */
+#room-details {
+  display: none;
+  margin-top: 30px;
+  max-width: 600px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Room Scheduling Section */
+#room-scheduling {
+  max-width: 600px;
+  background-color: rgb(255, 255, 255);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#day-select {
+  padding: 10px;
+  font-size: 16px;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+label {
+  font-weight: bold;
+}
+
+#btn-conflict{
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  transition: 0.3s;
+  padding: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: #000;
+  border: 1px solid #E87A00;
+}
+
+#btn-close-conflict {
+  background-color: #ff4d4d;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+#btn-close-conflict:hover {
+  background-color: #e63946;
+}
+
+#conflict-check {
+  display: flex;
+  margin-inline-start: 100px;
+  margin-inline-end: 165px;
+}
+
+.conflict {
+  border-color: red;
+  background-color: #ffe6e6;
+}
+
+/* Modal Background */
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 1000; 
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.5); 
+  box-sizing: border-box; 
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #ff000059;
+  border-color: red;
+  padding: 20px 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  width: 90%;
+  max-width: 500px; 
+  animation: fadeIn 0.3s ease-out;
+  box-sizing: border-box; 
+  flex-direction: column;
+  margin: auto;
+  display: flex;
+}
+
+
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+#close-conflict-modal {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  margin: auto;
+}
+
+#conflict-text {
+  text-align: center;
+  color: white;
+}
+
+#conflict-details {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  height: 100px;
+  margin: 5px;
+  margin-bottom: 15px;
+}
+
+.conflicted {
+  border: 2px solid red !important;
+  background-color: #d8878e; /* Light red background for clarity */
+}
+

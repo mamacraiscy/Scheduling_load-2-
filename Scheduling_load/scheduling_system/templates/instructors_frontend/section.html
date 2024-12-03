@@ -1,0 +1,122 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="{% static 'css/section.css' %}">
+    <title>Static Suggestion Dropdown</title>
+  </head>
+  <body>
+    <!-- CLASS SCHEDULE Header -->
+    <div class="dropdown-container">
+      <div class="class-schedule-header">CLASS SCHEDULE</div>
+
+      <!-- Program Input with Suggestions -->
+      <div class="dropdown-container2">
+        <label class="input-label" for="program-input">Choose Program:</label>
+        <input 
+          type="text" 
+          id="program-input" 
+          class="input-suggestions" 
+          placeholder="Type to search..." 
+          autocomplete="off"
+        />
+        <ul id="suggestion-list" class="suggestion-list">
+          <!-- Suggestions will be populated here -->
+        </ul>
+      </div>
+
+      <!-- Year Level -->
+      <div class="year-level-container">
+        <label class="input-label" for="year-level">Enter Year Level:</label>
+        <input type="text" class="input-field" id="year-level" placeholder="Enter Year Level" aria-label="Year Level">
+      </div>
+
+      <!-- Section -->
+      <div class="section-container">
+        <label class="input-label" for="section">Enter Section:</label>
+        <input type="text" class="input-field" id="section" placeholder="Enter Section" aria-label="Enter Section">
+      </div>
+
+      <!-- Shift -->
+      <div class="shift-button-container">
+        <div class="shift-container">
+          <label class="input-label" for="shift">Shift:</label>
+          <select class="dropdown-field" id="shift" aria-label="Select Shift">
+            <option value="" selected disabled>Choose Shift</option>
+            <option value="1">3rd Shift</option>
+            <option value="2">Summer</option>
+            <option value="3">Irregular</option>
+          </select>
+        </div>
+
+        <!-- Button to submit -->
+        <div class="button-container">
+          <button type="button" class="btn-custom" onclick="validateForm()">Submit</button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Success Modal (Pop-up) -->
+    <div class="modal" id="successModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Success</h5>
+          <button type="button" class="btn-close" onclick="closeModal('successModal')">×</button>
+        </div>
+        <div class="modal-body" id="success-message">
+          Class Schedule Added
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn-custom" onclick="closeModal('successModal')">OK</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+          // Handle the program search input
+          $("#program-input").keyup(function () {
+              const query = $(this).val().toLowerCase();
+
+              if (query) {
+                  $.ajax({
+                      url: "{% url 'search_programs' %}",
+                      data: { 'q': query },
+                      success: function(data) {
+                          const suggestions = data.programs.map(function(program) {
+                              return `<li class="suggestion-item" data-id="${program.program_id}">${program.program_name} (${program.program_code})</li>`;
+                          }).join('');
+                          $("#suggestion-list").html(suggestions).show();
+                      },
+                      error: function(xhr, status, error) {
+                          console.error("Error fetching programs: ", error);
+                      }
+                  });
+              } else {
+                  $("#suggestion-list").empty().hide();
+              }
+          });
+
+          // Handle selecting a program from the suggestions list
+          $(document).on("click", ".suggestion-item", function () {
+              const programId = $(this).data("id");
+              const programName = $(this).text();
+              $("#program-input").val(programName);  // Set input value to the selected program
+              $("#suggestion-list").empty().hide();  // Hide suggestions
+              // Optionally, you can also fetch more details about the selected program using programId
+          });
+
+          // Hide suggestions if the user clicks outside
+          $(document).click(function(event) {
+              if (!$(event.target).closest('#program-input, #suggestion-list').length) {
+                  $('#suggestion-list').empty().hide();
+              }
+          });
+      });
+    </script>
+  </body>
+</html>
